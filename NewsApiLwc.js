@@ -17,7 +17,6 @@ export default class NewsLauncher extends LightningElement {
     fetchNews(){
         retriveNews().then(response=>{
             console.log(response);
-           // this.formatNewsData(response.articles)
             var res = response.articles;
             this.result = res.map((item, index)=>{
                 let id = `new_${index+1}`;
@@ -30,10 +29,6 @@ export default class NewsLauncher extends LightningElement {
             console.error(error);
         })
     }
-    // formatNewsData(res){
-       
-
-    // }
     showModal(event){
         let id = event.target.dataset.item;
         this.result.forEach(item=>{
